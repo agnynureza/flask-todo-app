@@ -117,7 +117,7 @@ __Test case 1: Register and Login New User__
 __Test case 2: Home Page__
 
 - 2.A: Home
-<img src="img/Home.png" width="500"/>
+<img src="img/home.png" width="500"/>
 
 
 __Test case 3: Create Task__ 
@@ -143,3 +143,41 @@ __Test case 5: Logout__
 
 - 5.A: Redirect to Login Page
 <img src="img/login.png" width="500"/>
+
+### F. REST API 
+#### List of Auth routes : 
+```
+with prefix: /api/auth
+```
+| Route                   | HTTP | Description              |
+|-------------------------|------|--------------------------|
+| `/register`   | POST      | Register New user |
+| `/login`      | POST      | Login User |
+| `/logout`     | POST      | Destroy token|
+| `/refresh`    | POST      | Get New Access Token|
+
+#### List of User routes : 
+```
+with prefix: /api/users
+```
+| Route                   | HTTP | Description              |
+|-------------------------|------|--------------------------|
+| `/`           | GET       | Get all User |
+| `/`           | POST      | Create New User without hash password |
+| `/:id`        | PUT       | Update User Data|
+| `/:id`        | DELETE    | Delete User Data|
+| `/:id/tasks`  | GET       | Get task By user_id|
+
+
+#### List of Task routes : 
+```
+with prefix: /api/tasks
+```
+| Route                   | HTTP | Description              |
+|-------------------------|------|--------------------------|
+| `/`           | GET       | Get all Tasks |
+| `/:id`        | POST      | Get One Task |
+| `/`           | POST      | Create Task|
+| `/:id`        | PUT       | Update Task|
+| `/status/:id` | PUT       | Update Status Task|
+| `/:id`        | DELETE    | Delete Task|
